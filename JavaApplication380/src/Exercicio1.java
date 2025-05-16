@@ -1,21 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package javaapplication380;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author aluno.saolucas
- */
-public class Exercicio01 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Exercicio1 {
+    public static boolean ehPerfeito(int numero) {
+        int soma = 0;
+        for (int i = 1; i < numero; i++) {
+            if (numero % i == 0) {
+                soma += i;
+            }
+        }
+        return soma == numero;
     }
-    
+
+    public static void main(String[] args) {
+        int numero = Integer.parseInt(JOptionPane.showInputDialog("Digite um número:"));
+        JOptionPane.showMessageDialog(null, numero + (ehPerfeito(numero) ? " é perfeito." : " não é perfeito."));
+    }
 }
+
